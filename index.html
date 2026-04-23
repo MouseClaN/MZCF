@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse Clan | Official</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e60000">
+    <style>
+        /* Стиль сайта: экономный и быстрый */
+        :root {
+            --red: #e60000;
+            --dark-bg: #0a0a0a;
+            --card-bg: #151515;
+            --gray-text: #888;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+
+        header {
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--dark-bg);
+            border-bottom: 3px solid var(--red);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            letter-spacing: 5px;
+            font-size: 28px;
+            margin: 0;
+            font-style: italic;
+            text-transform: uppercase;
+        }
+
+        .container { padding: 20px; }
+
+        h2 {
+            font-size: 14px;
+            color: var(--gray-text);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2::after {
+            content: "";
+            height: 1px;
+            background: #333;
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+
+        /* Сетка состава */
+        .roster-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .player-card {
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 4px;
+            border-left: 3px solid var(--red);
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .player-card span {
+            display: block;
+            font-size: 10px;
+            color: var(--red);
+            text-transform: uppercase;
+        }
+
+        /* Секция матчей */
+        .match-card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;            position: relative;
+            border: 1px solid #222;
+        }
+
+        .match-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            filter: brightness(0.8);
+            background: #222; /* Заглушка пока грузится фото */
+        }
+
+        .match-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--red);
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+
+        .match-details { padding: 15px; text-align: center; }
+        .match-title { font-size: 18px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MOUSE</h1>
+</header>
+
+<div class="container">
+    <h2>Active Roster</h2>
+    <div class="roster-grid">
+        <div class="player-card"><span>OpenFrager</span>Lighting</div>
+        <div class="player-card"><span>Player</span>kislota</div>
+        <div class="player-card"><span>Rifler</span>Zaryya</div>
+        <div class="player-card"><span>Player</span>K1LLER</div>
+        <div class="player-card"><span>Rifler</span>Fozara</div>
+        <div class="player-card"><span>Rifler</span>Idvent</div>
+        <div class="player-card"><span>Player</span>l4mice</div>
+        <div class="player-card"><span>Player</span>skybox</div>
+        <div class="player-card"><span>Support</span>Fenazy</div>
+        <div class="player-card"><span>Sniper</span>vanfi</div>
+    </div>
+
+    <h2>Latest Matches</h2>
+
+    <!-- КАРТОЧКА МАТЧА 1 -->
+    <div class="match-card">
+        <div class="match-badge">WIN</div>
+        <img src="InCollage_20260423_223055904.jpg" alt="Match Result" class="match-image" loading="lazy">
+        <div class="match-details">
+            <div class="match-title">mouse vs Ascension</div>
+        </div>
+    </div>
+
+    <!-- КАРТОЧКА МАТЧА 2 (Пример как добавлять) -->
+    <div class="match-card">
+        <div class="match-badge">WIN</div>
+        <img src="InCollage_20260423_223055904.jpg" alt="Match Result" class="match-image" loading="lazy">
+        <div class="match-details">
+            <div class="match-title">mouse vs Ascension</div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // Регистрация оффлайн режима
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+    }
+</script>
+
+</body>
+</html>
