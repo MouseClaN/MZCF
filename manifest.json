@@ -1,0 +1,15 @@
+{
+  "name": "mouse Clan Team",
+  "short_name": "mouse",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#e60000",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
